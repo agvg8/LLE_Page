@@ -202,6 +202,9 @@ h6 {
 a {
     color: #E2E2E2;
 }
+p {
+    color: #E2E2E2 !important;
+}
 
 
 
@@ -284,6 +287,9 @@ input[type="password"]:focus {
     background-color: #63080d;
 }
 
+.text-light-gray {
+  color: #e2e2e2;
+}
 /* ============================= O NAS ========================== */
 
 /* ============================= OFERTA ========================== */
@@ -440,10 +446,10 @@ button:hover {
 
 .text-left a, h1{
     width: 50%;
-    color: #E2E2E2;
     padding-right: 1rem;
     font-family: "Electrolize", sans-serif;
     text-align: left;
+    color: #e2e2e2;
 }
 
 .photo-right {
@@ -471,6 +477,7 @@ button:hover {
     width: 100%;
     margin-top: 2rem;
     text-align: center;
+    color: #e2e2e2 !important;
 }
 .grid-2 img {
     width: 50px;
