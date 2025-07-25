@@ -43,10 +43,27 @@ def home():
 def onas():
     return render_template("onas.html", active_page="onas")
 
+
 @app.route('/portfolio')
 def portfolio():
-    entries = PortfolioEntry.query.all()
-    return render_template('portfolio.html', entries=entries, active_page='portfolio')
+    selected_make = request.args.get('make')
+
+    # unikalne marki do listy rozwijanej
+    makes = db.session.query(PortfolioEntry.make).distinct().all()
+    makes = [make[0] for make in makes]  # lista stringów
+
+    if selected_make:
+        entries = PortfolioEntry.query.filter_by(make=selected_make).all()
+    else:
+        entries = PortfolioEntry.query.all()
+
+    return render_template(
+        'portfolio.html',
+        entries=entries,
+        makes=makes,
+        selected_make=selected_make,
+        active_page='portfolio'
+    )
 
 @app.route('/kontakt', methods=['GET', 'POST'])
 def kontakt():
@@ -118,10 +135,16 @@ def portfolio_manager():
 @app.route('/delete_entry/<int:entry_id>', methods=['POST'])
 def delete_entry(entry_id):
     entry = PortfolioEntry.query.get_or_404(entry_id)
+
+    # Usuń plik obrazka
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], entry.image_filename)
+    if os.path.exists(image_path):
+        os.remove(image_path)
+
     db.session.delete(entry)
     db.session.commit()
     return redirect(url_for('portfolio_manager'))
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
