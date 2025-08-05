@@ -294,6 +294,15 @@ input[type="password"]:focus {
 
 /* ============================= PORTFOLIO ========================== */
 
+.gallery-image {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ============================= KONTAKT ========================== */
 
 .contact-form-wrapper {
@@ -602,3 +611,34 @@ button:hover {
     padding: 1.5rem;
   }
 }
+
+
+/* ====== KAFELKI AUT ====== */
+.car-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.car-card img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.car-card .card-body {
+  background-color: #1c1c1e;
+  color: #e2e2e2;
+}
+
+.car-card .card-footer {
+  background-color: #101112;
+  border-top: 1px solid #444;
+}
+
