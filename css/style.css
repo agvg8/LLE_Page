@@ -40,6 +40,7 @@ footer.footer {
   height: 150px;
   background: #101112;
   text-align: center;
+    color: darkmagenta !important;
   padding: 1rem 0;
 }
 
@@ -82,7 +83,7 @@ footer.footer {
     color: #63080d !important; /* kolor po najechaniu */
 }
 .navbar-toggler {
-    background-color: #E2E2E2;
+    background-color: #414042;
     font-family: "Electrolize", sans-serif;
 }
 
@@ -92,12 +93,12 @@ footer.footer {
     left: 0;
     width: 100%;
     background-color: transparent; /* przezroczyste tło */
-    color: #2b2b2b;
+    color: #414042;
     padding: 0.5rem 1rem;
     text-align: center;
     font-size: 0.9rem;
     z-index: 2;
-    backdrop-filter: blur(2px);
+
 }
 
 .site-footer p {
@@ -196,6 +197,7 @@ h6 {
     font-size: 3em;
     font-family: "Electrolize", sans-serif;
 }
+
 a {
     color: #E2E2E2;
 }
@@ -555,17 +557,17 @@ button:hover {
 /* Responsywność: telefony (max 767px) */
 @media (max-width: 767px) {
     body {
-  padding-top: 5rem; /* zawsze 5 rem od góry, żeby navbar fixed-top nie przykrywał treści */
+  padding-top: 10rem; /* zawsze 5 rem od góry, żeby navbar fixed-top nie przykrywał treści */
 }
   html {
     font-size: 12px; /* lekko mniejsza czcionka */
-      padding-top: 5rem;
+      padding-top: 10rem;
   }
 
   .top-section {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 5rem;
+    padding-top: 10rem;
   }
   .text-left a, h1 {
     font-size: 1.8rem;
@@ -601,4 +603,3 @@ button:hover {
     padding: 1.5rem;
   }
 }
-
