@@ -558,7 +558,7 @@ button:hover {
 /* Responsywność: telefony (max 767px) */
 @media (max-width: 767px) {
     body {
-  padding-top: 5rem; /* zawsze 5 rem od góry, żeby navbar fixed-top nie przykrywał treści */
+  padding-top: 10rem; /* zawsze 5 rem od góry, żeby navbar fixed-top nie przykrywał treści */
 }
   html {
     font-size: 12px; /* lekko mniejsza czcionka */
@@ -604,3 +604,4 @@ button:hover {
     padding: 1.5rem;
   }
 }
+
