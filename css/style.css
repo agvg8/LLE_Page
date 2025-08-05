@@ -125,15 +125,14 @@ footer.footer {
 }
 
 .fixed-left-center {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  text-align: left !important; /* wyrównanie tekstu do lewej */
-  padding-left: 0.5rem;   /* mały odstęp od lewej krawędzi */
-  padding-right: 1rem;
-  z-index: 2;
-  max-width: 90vw;        /* zapobiega wychodzeniu poza ekran */
+  display: flex;
+  flex-direction: column;       /* żeby dzieci (h6, h5) układały się pionowo */
+  justify-content: center;      /* pionowo: na środku */
+  align-items: flex-start;      /* poziomo: od lewej */
+  height: 65vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  box-sizing: border-box;
 }
 
 #typed-text {
