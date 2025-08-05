@@ -124,18 +124,15 @@ footer.footer {
 }
 
 .fixed-left-center {
-    color: #E2E2E2;
-    margin-left: 3%;
-    padding-left: 20px;
-    position: fixed;
-    left: 0;
-    top: 35%;
-    transform: translateY(-50%);
-    z-index: 1050; /* wyżej niż treść, niżej niż modale */
-    width: 50%;
-    text-align: left !important;
-    font-family: "Electrolize", sans-serif;
-
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left !important; /* wyrównanie tekstu do lewej */
+  padding-left: 0.5rem;   /* mały odstęp od lewej krawędzi */
+  padding-right: 1rem;
+  z-index: 2;
+  max-width: 90vw;        /* zapobiega wychodzeniu poza ekran */
 }
 
 #typed-text {
@@ -558,17 +555,17 @@ button:hover {
 /* Responsywność: telefony (max 767px) */
 @media (max-width: 767px) {
     body {
-  padding-top: 10rem; /* zawsze 5 rem od góry, żeby navbar fixed-top nie przykrywał treści */
+  padding-top: 5rem; /* zawsze 5 rem od góry, żeby navbar fixed-top nie przykrywał treści */
 }
   html {
     font-size: 12px; /* lekko mniejsza czcionka */
-      padding-top: 20rem;
+      padding-top: 5rem;
   }
 
   .top-section {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 10rem;
+    padding-top: 5rem;
   }
   .text-left a, h1 {
     font-size: 1.8rem;
@@ -604,5 +601,3 @@ button:hover {
     padding: 1.5rem;
   }
 }
-
-
