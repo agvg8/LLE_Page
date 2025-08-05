@@ -562,13 +562,13 @@ button:hover {
 }
   html {
     font-size: 12px; /* lekko mniejsza czcionka */
-      padding-top: 5rem;
+      padding-top: 20rem;
   }
 
   .top-section {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 5rem;
+    padding-top: 10rem;
   }
   .text-left a, h1 {
     font-size: 1.8rem;
@@ -604,4 +604,5 @@ button:hover {
     padding: 1.5rem;
   }
 }
+
 
