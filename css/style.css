@@ -100,8 +100,8 @@ footer.footer {
     backdrop-filter: blur(2px);
 }
 
-.site-footer a {
-    color: #444 !important;
+.site-footer p {
+    color: #414042 !important;
     text-decoration: none;
 }
 
@@ -601,3 +601,4 @@ button:hover {
     padding: 1.5rem;
   }
 }
+
