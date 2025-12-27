@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">LedLightExpert</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link {% if active_page == 'LLEAdmin' %}active{% endif %}" href="/LLEAdmin">LLE_Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if active_page == 'portfolio_menager' %}active{% endif %}" href="/LLEAdmin/portfolio_manager">Menager Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if active_page == 'kontakt_menager' %}active{% endif %}" href="/LLEAdmin/kontakt_manager">Zapytania</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin: 10rem;width: 120%;">
+  <h2 class="mb-4 text-center" style="color: #e2e2e2;">Edytuj wpis portfolio</h2>
+
+  <form method="POST" enctype="multipart/form-data" class="w-75 mx-auto" style="color: #e2e2e2;">
+  <div class="mb-3">
+    <input name="make" class="form-control" placeholder="Marka" required value="{{ entry.make }}">
+  </div>
+  <div class="mb-3">
+    <input name="model" class="form-control" placeholder="Model" required value="{{ entry.model }}">
+  </div>
+  <div class="mb-3">
+    <input name="year" class="form-control" placeholder="Rok" required value="{{ entry.year }}">
+  </div>
+  <div class="mb-3">
+    <textarea name="description" class="form-control" placeholder="Opis do 1000 znaków" maxlength="1000">{{ entry.description }}</textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Aktualny obrazek główny:</label><br>
+    <img src="{{ url_for('static', filename='uploads/' ~ entry.image_filename) }}" alt="obrazek" style="width: 200px; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+    <input type="file" name="image" class="form-control" />
+    <small class="text-muted">Jeśli chcesz zmienić obrazek, wybierz nowy plik.</small>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Galeria zdjęć (możesz wybrać wiele):</label>
+    <input type="file" name="gallery_files" accept="image/*" multiple class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Filmy mp4 (możesz wybrać wiele):</label>
+    <input type="file" name="video_files" accept="video/mp4" multiple class="form-control" />
+  </div>
+
+  <button type="submit" class="btn btn-primary w-100">Zapisz zmiany</button>
+</form>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Agnieszka Gruszka.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
